@@ -34,7 +34,6 @@ nav:
     total_estimated_value: "Gesamtwert deines Portfolios"
     wallet_estimated_value: "Wert dieser Wallet"
     all_time_profit: "Gesamtgewinn/-verlust"
-    allocation: "Verteilung"
     assets: "Assets"
     add_new_operation: "Neue Transaktion"
     back_to_wallets: "Zurück zu den Wallets"
