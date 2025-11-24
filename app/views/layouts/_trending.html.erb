@@ -7,12 +7,14 @@
       <ul class="list-group">
         <% @holdings.where(asset_type: "crypto").last(5).each do |holding|%>
           <li class="info-grid p-2">
-           <%= holding.name %>
-            <span class="me-3">$ <%= number_with_precision(holding.current_price, precision: 2) %></span>
-          <% percentage_change = holding.find_percentage_holding_info %>
-            <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
+            <span class="holding-name"><%= holding.name %></span>
+            <div class="numbers-container">
+              <span class="price-value">$ <%= number_with_precision(holding.current_price, precision: 2) %></span>
+              <% percentage_change = holding.find_percentage_holding_info %>
+              <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %> percentage-value">
                 <%= number_with_precision(percentage_change, precision: 2) %>%
-             </span>
+              </span>
+            </div>
           </li>
         <% end %>
               </ul>
@@ -25,13 +27,15 @@
       <ul class="list-group">
         <% @holdings.where(asset_type: "fiat").sample(5).each do |holding|%>
         <li class="info-grid p-2">
-          <%= holding.name %>
-            <span class="me-3">$ <%= number_with_precision(holding.current_price, precision: 2) %></span>
+          <span class="holding-name"><%= holding.name %></span>
+          <div class="numbers-container">
+            <span class="price-value">$ <%= number_with_precision(holding.current_price, precision: 2) %></span>
             <% percentage_change = holding.find_percentage_holding_info %>
-              <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
-                  <%= number_with_precision(percentage_change, precision: 2) %>%
-              </span>
-          </li>
+            <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %> percentage-value">
+              <%= number_with_precision(percentage_change, precision: 2) %>%
+            </span>
+          </div>
+        </li>
         <% end %>
         </ul>
       </div>

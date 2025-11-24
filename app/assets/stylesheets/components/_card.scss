@@ -384,6 +384,65 @@ hr.solid {
 .info-grid {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+
+  .holding-name {
+    font-weight: 500;
+    color: $midnight-blue;
+  }
+
+  .numbers-container {
+    display: contents; // Allow grid to work normally on desktop
+  }
+
+  .price-value,
+  .percentage-value {
+    text-align: right;
+  }
+
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 8px !important;
+    border-bottom: 1px solid #e0e0e0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    // Name on first line - full width
+    .holding-name {
+      font-weight: 600;
+      color: $midnight-blue;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+
+    // Numbers container - flex row, right aligned
+    .numbers-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 15px;
+      width: 100%;
+      margin-left: auto;
+    }
+
+    .price-value,
+    .percentage-value {
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+
+  // Better alignment for tablet
+  @media (min-width: 577px) and (max-width: 768px) {
+    gap: 15px;
+    font-size: 14px;
+  }
 }
 
 //all time profit
