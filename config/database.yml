@@ -35,6 +35,7 @@ development:
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
+  # Using Unix socket at /var/run/postgresql (set via PGHOST env var)
   #host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
