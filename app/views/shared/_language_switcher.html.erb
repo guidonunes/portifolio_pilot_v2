@@ -16,7 +16,7 @@
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
       <li>
         <%= link_to set_locale_path('en'), class: "dropdown-item #{'active' if I18n.locale.to_s == 'en'}" do %>
-          <i class="fa-solid fa-flag me-2"></i> English
+          🇬🇧 English
           <% if I18n.locale.to_s == 'en' %>
             <i class="fa-solid fa-check ms-2"></i>
           <% end %>
@@ -24,7 +24,7 @@
       </li>
       <li>
         <%= link_to set_locale_path('pt-BR'), class: "dropdown-item #{'active' if I18n.locale.to_s == 'pt-BR'}" do %>
-          <i class="fa-solid fa-flag me-2"></i> Português (BR)
+          🇧🇷 Português
           <% if I18n.locale.to_s == 'pt-BR' %>
             <i class="fa-solid fa-check ms-2"></i>
           <% end %>
@@ -32,7 +32,7 @@
       </li>
       <li>
         <%= link_to set_locale_path('de'), class: "dropdown-item #{'active' if I18n.locale.to_s == 'de'}" do %>
-          <i class="fa-solid fa-flag me-2"></i> Deutsch
+          🇩🇪 Deutsch
           <% if I18n.locale.to_s == 'de' %>
             <i class="fa-solid fa-check ms-2"></i>
           <% end %>
@@ -41,4 +41,3 @@
     </ul>
   </div>
 </div>
-
