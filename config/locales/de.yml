@@ -1,6 +1,6 @@
 de:
   hello: "Hallo Welt"
-  
+
   # Navigation
   nav:
     home: "Startseite"
@@ -9,37 +9,36 @@ de:
     log_out: "Abmelden"
     login: "Anmelden"
     language: "Sprache"
-  
+
   # Banner
   banner:
     title: "PortfolioPilot"
-    subtitle: "Verwalten Sie Aktien und Kryptowährungen nahtlos an einem Ort."
-    get_started: "Jetzt loslegen"
-  
+    subtitle: "Verwalte deine Aktien und Kryptos ganz einfach an einem Ort."
+    get_started: "Leg los"
+
   # Pages
   pages:
     about: "Über uns"
     welcome: "Willkommen"
     trending_now: "Trending"
-  
+
   # Wallets
   wallets:
-    my_wallets: "Meine Brieftaschen"
-    new_wallet: "Neue Brieftasche"
-    create_wallet: "Brieftasche erstellen"
-    edit_wallet_name: "Brieftaschenname bearbeiten"
-    view_wallet: "Brieftasche anzeigen"
-    total_estimated_value: "Geschätzter Gesamtwert der Investition"
-    wallet_estimated_value: "Geschätzter Wert der Brieftasche"
+    my_wallets: "Meine Wallets"
+    new_wallet: "Neue Wallet"
+    create_wallet: "Wallet erstellen"
+    edit_wallet_name: "Wallet-Namen ändern"
+    view_wallet: "Wallet ansehen"
+    total_estimated_value: "Gesamtwert deines Portfolios"
+    wallet_estimated_value: "Wert dieser Wallet"
     all_time_profit: "Gesamtgewinn/-verlust"
-    allocation: "Zuteilung"
-    assets: "Vermögenswerte"
-    add_new_operation: "Neue Operation hinzufügen"
-    back_to_wallets: "Zurück zu Brieftaschen"
-    best_performer: "Bester Performer"
+    allocation: "Verteilung"
+    assets: "Assets"
+    add_new_operation: "Neue Transaktion"
+    back_to_wallets: "Zurück zu den Wallets"
+    best_performer: "Top Performer"
     worst_performer: "Schlechtester Performer"
-    no_data_available: "Keine Daten verfügbar"
-  
+    no_data_available: "Keine Daten da"
   # Operations
   operations:
     name: "Name"
@@ -52,35 +51,35 @@ de:
     delete: "Löschen"
     edit_operation: "Operation bearbeiten"
     add_operation: "Neue Operation hinzufügen"
-  
+
   # Assets
   assets:
     cryptocurrencies: "Kryptowährungen"
     stocks: "Aktien"
     price_24h: "24h%"
-  
+
   # Features
   features:
-    track_crypto_stocks: "Krypto und Aktien verfolgen"
-    track_description: "Überwachen Sie sowohl Kryptowährungen als auch brasilianische Aktien nahtlos in einer Anwendung."
-    best_worst_performers: "Beste und schlechteste Performer"
-    performers_description: "Behalten Sie die besten und schlechtesten Vermögenswerte in Ihrem Portfolio im Auge."
-    multiple_wallets: "Mehrere Brieftaschen erstellen"
-    wallets_description: "Erstellen und verwalten Sie mehrere Brieftaschen, um verschiedene finanzielle Ziele zu verfolgen."
-  
+
+    track_crypto_stocks: "Tracke Krypto & Aktien"
+    track_description: "Behalte Kryptos und brasilianische Aktien einfach in einer App im Blick."
+    best_worst_performers: "Top & Flop Performer"
+    performers_description: "Sieh sofort, welche Assets in deinem Portfolio am besten und am schlechtesten laufen."
+    multiple_wallets: "Mehrere Wallets erstellen"
+    wallets_description: "Erstelle und manage mehrere Wallets für deine verschiedenen Finanzziele."
   # Explanation
   explanation:
-    web3_traditional: "Web3-Vermögenswerte + Traditionelle Aktien"
-    web3_description: "Dieser integrierte Ansatz ermöglicht es Ihnen, sowohl aufstrebende digitale Vermögenswerte wie Kryptowährungen und dezentrale Finanz-Token (DeFi) als auch etablierte Finanzinstrumente wie Aktien zu überwachen und zu verwalten."
-    monitor_categories: "Beide Kategorien an einem Ort überwachen"
-    monitor_description: "Durch die Überwachung beider Kategorien an einem einzigen Ort können Sie Ihre Anlagestrategie diversifizieren, über aufkommende Trends in der dezentralen Finanzierung informiert bleiben und fundierte Entscheidungen treffen, um Ihr finanzielles Wachstum zu optimieren."
-  
+    web3_traditional: "Web3 Assets + Klassische Aktien"
+    web3_description: "Verwalte moderne digitale Assets (wie Krypto & DeFi) und klassische Aktien ganz einfach zusammen in einer App."
+    monitor_categories: "Beide Welten an einem Ort"
+    monitor_description: "Diversifiziere dein Portfolio und bleib bei DeFi-Trends immer up-to-date. So triffst du bessere Entscheidungen für dein finanzielles Wachstum."
+
   # About
   about:
     about_us: "Über uns"
     our_goal: "Unser Ziel"
     our_goal_description: "Als Studenten von Le Wagon haben wir diese Initiative mit dem Ziel gegründet, Einzelpersonen dabei zu helfen, alle ihre Investitionen in einer einzigen Anwendung zu organisieren, Zeit zu sparen und ein geordneteres Finanzmanagement zu fördern."
-  
+
   # Common
   common:
     confirm: "Sind Sie sicher?"
@@ -90,4 +89,3 @@ de:
     edit: "Bearbeiten"
     delete: "Löschen"
     back: "Zurück"
-

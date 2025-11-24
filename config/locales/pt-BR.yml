@@ -1,6 +1,6 @@
 pt-BR:
   hello: "Olá mundo"
-  
+
   # Navigation
   nav:
     home: "Início"
@@ -9,19 +9,19 @@ pt-BR:
     log_out: "Sair"
     login: "Entrar"
     language: "Idioma"
-  
+
   # Banner
   banner:
     title: "PortfolioPilot"
-    subtitle: "Gerencie ações e criptomoedas perfeitamente em um só lugar."
+    subtitle: "Gerencie ações e criptomoedas sem complicações em um só lugar."
     get_started: "Começar Agora"
-  
+
   # Pages
   pages:
     about: "Sobre nós"
     welcome: "Bem-vindo"
     trending_now: "Em Alta"
-  
+
   # Wallets
   wallets:
     my_wallets: "Minhas Carteiras"
@@ -39,7 +39,7 @@ pt-BR:
     best_performer: "Melhor Desempenho"
     worst_performer: "Pior Desempenho"
     no_data_available: "Nenhum dado disponível"
-  
+
   # Operations
   operations:
     name: "Nome"
@@ -52,35 +52,35 @@ pt-BR:
     delete: "Excluir"
     edit_operation: "Editar Operação"
     add_operation: "Adicionar Nova Operação"
-  
+
   # Assets
   assets:
     cryptocurrencies: "Criptomoedas"
     stocks: "Ações"
     price_24h: "24h%"
-  
+
   # Features
   features:
     track_crypto_stocks: "Rastrear Cripto e Ações"
-    track_description: "Monitore criptomoedas e ações brasileiras perfeitamente em um único aplicativo."
+    track_description: "Monitore criptomoedas e ações brasileiras sem estresse em um único aplicativo."
     best_worst_performers: "Melhores e Piores Desempenhos"
     performers_description: "Fique de olho nos ativos com melhor e pior desempenho em seu portfólio."
     multiple_wallets: "Criar Múltiplas Carteiras"
     wallets_description: "Crie e gerencie múltiplas carteiras para rastrear diferentes objetivos financeiros."
-  
+
   # Explanation
   explanation:
     web3_traditional: "Ativos Web3 + Ações Tradicionais"
-    web3_description: "Esta abordagem integrada permite que você monitore e gerencie tanto ativos digitais emergentes, como criptomoedas e tokens de finanças descentralizadas (DeFi), quanto instrumentos financeiros estabelecidos como ações."
+    web3_description: "Esta abordagem integrada permite que você monitore e gerencie tanto ativos digitais emergentes, como criptomoeda, quanto instrumentos financeiros estabelecidos no mercado tradicional como ações."
     monitor_categories: "Monitore Ambas as Categorias em Um Espaço"
-    monitor_description: "Ao monitorar ambas as categorias em um único espaço, você pode diversificar sua estratégia de investimento, manter-se informado sobre tendências emergentes em finanças descentralizadas e tomar decisões bem informadas para otimizar seu crescimento financeiro."
-  
+    monitor_description: "Ao monitorar ambas as categorias em um único espaço, você pode diversificar sua estratégia de investimento, manter-se informado sobre tendências emergentes em criptomoedas e tomar decisões bem informadas para otimizar seu crescimento financeiro."
+
   # About
   about:
     about_us: "Sobre nós"
     our_goal: "Nosso Objetivo"
     our_goal_description: "Como estudantes do Le Wagon, estabelecemos esta iniciativa com o objetivo de auxiliar indivíduos a organizar todos os seus investimentos em um único aplicativo, economizando tempo e promovendo uma gestão financeira mais ordenada."
-  
+
   # Common
   common:
     confirm: "Tem certeza?"
@@ -90,4 +90,3 @@ pt-BR:
     edit: "Editar"
     delete: "Excluir"
     back: "Voltar"
-
