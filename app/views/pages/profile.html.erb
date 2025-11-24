@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div class="update-info-card">
+    <h3 class="d-flex justify-content-center">User info</h3>
+    <hr class="solid">
+    <div class="d-flex justify-content-between">
+      <p>First Name: <strong><%= @user.first_name %></strong></p>
+      <p class="me-5">Last Name: <strong><%= @user.last_name %></strong></p>
+    </div>
+    <p>Email: <strong><%= @user.email %></strong> </p>
+    <hr class="solid">
+    <p><strong>Creation Date:</strong> <%= @user.created_at.strftime('%I:%M %p, %A, %B %d %Y') %></p>
+    <p><strong>Last Update:</strong> <%= @user.updated_at.strftime('%I:%M %p, %A, %B %d %Y') %></p>
+    <%= link_to "Update your information", edit_user_registration_path, class: "btn-flat" %>
+  </div>
+</div>

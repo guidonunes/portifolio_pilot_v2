@@ -1,0 +1,20 @@
+current directory: /home/guilherme/code/guidonunes/portfolio-pilot-rails/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+/usr/local/bin/ruby extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+checking for rb_reg_onig_match() in ruby.h... yes
+creating Makefile
+
+current directory: /home/guilherme/code/guidonunes/portfolio-pilot-rails/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20251124-98139-h0x23e sitelibdir\=./.gem.20251124-98139-h0x23e clean
+
+current directory: /home/guilherme/code/guidonunes/portfolio-pilot-rails/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20251124-98139-h0x23e sitelibdir\=./.gem.20251124-98139-h0x23e
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /home/guilherme/code/guidonunes/portfolio-pilot-rails/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20251124-98139-h0x23e sitelibdir\=./.gem.20251124-98139-h0x23e install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20251124-98139-h0x23e
+
+current directory: /home/guilherme/code/guidonunes/portfolio-pilot-rails/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20251124-98139-h0x23e sitelibdir\=./.gem.20251124-98139-h0x23e clean

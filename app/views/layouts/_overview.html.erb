@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center">
+    <div class="card-total-balance">
+      <div class="card-content">
+        <div class="balance-title"><h2 class=" card-title-spec p-5">Wallet Estimated Value</h2></div>
+        <div class="separator"></div>
+        <div class="balance">
+          <div class="balance-left">
+            <div class="currency mt-2">R$</div>
+          </div>
+          <div class="balance-right">
+             <div class="balance-amount"><%= number_with_precision(@total_holdings, precision: 2) %></div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
