@@ -2,7 +2,7 @@ de:
   hello: "Hallo Welt"
 
   # Navigation
-nav:
+  nav:
     home: "Home"
     my_wallets: "Meine Wallets"
 
@@ -13,19 +13,19 @@ nav:
     language: "Sprache"
 
   # Banner
-    banner:
+  banner:
     title: "PortfolioPilot"
     subtitle: "Verwalte deine Aktien und Kryptos ganz einfach an einem Ort."
     get_started: "Leg los"
 
   # Pages
-    pages:
+  pages:
     about: "Über uns"
     welcome: "Willkommen"
     trending_now: "Trending"
 
   # Wallets
-    wallets:
+  wallets:
     my_wallets: "Meine Wallets"
     new_wallet: "Neue Wallet"
     create_wallet: "Wallet erstellen"
@@ -41,7 +41,7 @@ nav:
     worst_performer: "Schlechtester Performer"
     no_data_available: "Keine Daten da"
   # Operations
-    operations:
+  operations:
     name: "Name"
     price: "Preis"
     avg_buy_price: "Durchschnittlicher Kaufpreis"
@@ -54,13 +54,13 @@ nav:
     add_operation: "Neue Operation hinzufügen"
 
   # Assets
-    assets:
+  assets:
     cryptocurrencies: "Kryptowährungen"
     stocks: "Aktien"
     price_24h: "24h%"
 
   # Features
-    features:
+  features:
 
     track_crypto_stocks: "Tracke Krypto & Aktien"
     track_description: "Behalte Kryptos und brasilianische Aktien einfach in einer App im Blick."
@@ -69,20 +69,20 @@ nav:
     multiple_wallets: "Mehrere Wallets erstellen"
     wallets_description: "Erstelle und manage mehrere Wallets für deine verschiedenen Finanzziele."
   # Explanation
-    explanation:
+  explanation:
     web3_traditional: "Web3 Assets + Klassische Aktien"
     web3_description: "Verwalte moderne digitale Assets (wie Krypto & DeFi) und klassische Aktien ganz einfach zusammen in einer App."
     monitor_categories: "Beide Welten an einem Ort"
     monitor_description: "Diversifiziere dein Portfolio und bleib bei DeFi-Trends immer up-to-date. So triffst du bessere Entscheidungen für dein finanzielles Wachstum."
 
   # About
-    about:
+  about:
     about_us: "Über uns"
     our_goal: "Unser Ziel"
     our_goal_description: "Als Studenten von Le Wagon haben wir diese Initiative mit dem Ziel gegründet, Einzelpersonen dabei zu helfen, alle ihre Investitionen in einer einzigen Anwendung zu organisieren, Zeit zu sparen und ein geordneteres Finanzmanagement zu fördern."
 
   # Common
-    common:
+  common:
     confirm: "Sind Sie sicher?"
     close: "Schließen"
     cancel: "Abbrechen"
