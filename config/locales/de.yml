@@ -2,12 +2,14 @@ de:
   hello: "Hallo Welt"
 
   # Navigation
-  nav:
-    home: "Startseite"
-    my_wallets: "Meine Brieftaschen"
+nav:
+    home: "Home"
+    my_wallets: "Meine Wallets"
+
     profile: "Profil"
-    log_out: "Abmelden"
-    login: "Anmelden"
+    log_out: "Ausloggen"
+    login: "Einloggen"
+
     language: "Sprache"
 
   # Banner
