@@ -1,0 +1,71 @@
+// Responsive utilities and helper classes
+
+// Container padding adjustments
+@media (max-width: 768px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+// Button responsive adjustments
+.btn {
+  @media (max-width: 576px) {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+// Modal responsive adjustments
+.modal-dialog {
+  @media (max-width: 576px) {
+    margin: 10px;
+    max-width: calc(100% - 20px);
+  }
+}
+
+// Image responsive
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Prevent horizontal scroll
+body {
+  overflow-x: hidden;
+}
+
+// Responsive text utilities
+@media (max-width: 576px) {
+  .text-responsive {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 28px !important;
+  }
+
+  h2 {
+    font-size: 24px !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+  }
+}
+
+// Responsive spacing
+@media (max-width: 768px) {
+  .mt-md-0 {
+    margin-top: 0 !important;
+  }
+
+  .mb-md-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .p-md-3 {
+    padding: 1rem !important;
+  }
+}
+

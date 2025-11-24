@@ -61,12 +61,18 @@ hr.solid {
 
 .card-total-balance {
   width: 720px;
+  max-width: 100%;
   border-radius: 16px;
   background-color: $soft-white;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 10px 10px -4px rgba(0, 0, 0, 0.09);
   margin-bottom: 25px;
   float: left;
   transition: transform 2s;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    float: none;
+  }
 
   body {
     padding-top: 25px;
@@ -96,6 +102,16 @@ hr.solid {
     font-weight: 300;
     line-height: 50px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 28px;
+      line-height: 28px;
+    }
   }
 
   .balance-title {
@@ -119,6 +135,14 @@ hr.solid {
     color:$midnight-blue;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
     font-weight: 300;
+
+    @media (max-width: 768px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 24px;
+    }
   }
 
   .balance-amount-hide {
@@ -173,6 +197,21 @@ hr.solid {
   gap: 24px;
   position: relative;
   z-index: 2; // Places the content above the overlay
+
+  // Responsive grid
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
 }
 
 .card-my-wallets-preview {
@@ -276,6 +315,14 @@ hr.solid {
   font-size: 32px;
   color: $midnight-blue;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 576px) {
+    font-size: 20px;
+  }
 }
 
 .card-holdings-quantity {
@@ -283,6 +330,13 @@ hr.solid {
   background-color: $soft-white;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14), 0 10px 10px -4px rgba(0, 0, 0, 0.09);
   padding: 24px;
+  width: 50%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-top: 20px;
+  }
 }
 
 .performer-card {

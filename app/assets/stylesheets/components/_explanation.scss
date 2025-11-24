@@ -2,6 +2,10 @@
   padding: 50px 20px;
   background-color: #f8f9fa;
 
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
+
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -12,9 +16,27 @@
       align-items: center;
       margin-bottom: 30px;
 
+      @media (max-width: 768px) {
+        flex-direction: column;
+        margin-bottom: 40px;
+      }
+
+      // Reverse order for second row on mobile
+      &:nth-child(2) {
+        @media (max-width: 768px) {
+          flex-direction: column-reverse;
+        }
+      }
+
       .left-column, .right-column {
         flex: 1;
         padding: 0 20px;
+
+        @media (max-width: 768px) {
+          flex: 1 1 100%;
+          padding: 0;
+          margin-bottom: 20px;
+        }
 
         h2 {
           font-size: 24px;
@@ -22,12 +44,24 @@
           margin-bottom: 15px;
           color: $midnight-blue;
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+          @media (max-width: 768px) {
+            font-size: 20px;
+          }
+
+          @media (max-width: 576px) {
+            font-size: 18px;
+          }
         }
 
         p {
           font-size: 16px;
           color: #555555;
           margin-bottom: 20px;
+
+          @media (max-width: 576px) {
+            font-size: 14px;
+          }
         }
       }
 
@@ -38,8 +72,16 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         transition: transform 0.2s;
 
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+
         &:hover {
           transform: scale(1.1); // Apply the scale transformation on hover
+
+          @media (max-width: 768px) {
+            transform: none; // Disable hover effect on mobile
+          }
         }
       }
     }

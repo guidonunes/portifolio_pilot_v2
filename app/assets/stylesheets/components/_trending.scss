@@ -2,11 +2,23 @@
   padding: 54px 20px;
   background-color: $midnight-blue;// Light background color for contrast with the banner
 
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
+
   h1 {
     font-family: $headers-font;
     color: $soft-white;
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 24px;
+    }
   }
 
   .container {
@@ -14,10 +26,23 @@
     justify-content: space-around;
     width: 100%;
     margin: 32px auto;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      margin: 20px auto;
+    }
 
     .column {
       flex: 1 1 45%; // Flexible basis for responsiveness
       margin: 20px;
+      min-width: 300px;
+
+      @media (max-width: 768px) {
+        flex: 1 1 100%;
+        margin: 15px 0;
+        min-width: auto;
+      }
 
       h2 {
         font-size: 24px;
@@ -25,6 +50,10 @@
         margin-bottom: 15px;
         color: $gold;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+        @media (max-width: 576px) {
+          font-size: 20px;
+        }
       }
 
       .card {
@@ -33,6 +62,10 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         padding: 20px;
         margin-bottom: 20px;
+
+        @media (max-width: 576px) {
+          padding: 15px;
+        }
 
         // Additional card styling
       }

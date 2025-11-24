@@ -3,8 +3,62 @@
   grid-template-columns: repeat(6, 2fr);
   justify-content: center;
   align-items: center;
+  gap: 10px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
 }
+
 .grid-header {
   font-weight: bold;
   margin-bottom: 1rem;
+
+  @media (max-width: 768px) {
+    display: none; // Hide header on mobile, use data labels instead
+  }
+}
+
+.grid-operation {
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 15px;
+    text-align: left !important;
+
+    .column {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #e0e0e0;
+      margin: 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: $midnight-blue;
+        margin-right: 10px;
+      }
+
+      &.ms-4 {
+        margin-left: 0 !important;
+      }
+    }
+  }
 }

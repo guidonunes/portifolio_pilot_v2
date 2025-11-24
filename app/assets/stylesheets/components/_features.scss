@@ -2,6 +2,10 @@
   padding: 50px 20px;
   background-color: $soft-white; // Light background color for contrast with the banner
 
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
+
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -11,6 +15,10 @@
     width: 100%;
     margin: 64px auto;
     transition: transform 0.2s;
+
+    @media (max-width: 768px) {
+      margin: 32px auto;
+    }
   }
 
   .feature {
@@ -22,25 +30,56 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s; // Apply the transition to the transform property
 
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+      margin: 15px 0;
+      padding: 40px 30px;
+    }
+
+    @media (max-width: 576px) {
+      padding: 30px 20px;
+      margin: 10px 0;
+    }
+
     .icon {
       font-size: 36px;
       color: $sky-blue; // Accent color for icons
       margin-bottom: 15px;
+
+      @media (max-width: 576px) {
+        font-size: 28px;
+      }
     }
 
     h3 {
       font-size: 24px;
       margin-bottom: 10px;
       color: $midnight-blue; // Primary text color
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+
+      @media (max-width: 576px) {
+        font-size: 18px;
+      }
     }
 
     p {
       font-size: 16px;
       color: $charcoal; // Secondary text color
+
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
     }
 
     &:hover {
       transform: scale(1.1); // Apply the scale transformation on hover
+
+      @media (max-width: 768px) {
+        transform: none; // Disable hover effect on mobile
+      }
     }
   }
 }
