@@ -1,12 +1,12 @@
 <div class="container mt-5 mb-5">
-  <h1 class="dashboard-title tracking-in-expand">Welcome, <span class="dashboard-user"><%= current_user.first_name %>!</span></h1>
+  <h1 class="dashboard-title tracking-in-expand"><%= t("pages.welcome") %>, <span class="dashboard-user"><%= current_user.first_name %>!</span></h1>
 </div>
 
 <div class="container d-flex justify-content-center">
   <div class="d-flex justify-content-center w-100">
     <div class="card-total-balance w-100">
       <div class="card-content">
-        <h3 class="balance-title text-center">Total Estimated Investment Value</h3>
+        <h3 class="balance-title text-center"><%= t("wallets.total_estimated_value") %></h3>
         <div class="separator"></div>
         <div class="balance">
           <div class="balance-left">
@@ -34,10 +34,10 @@
 </div>
 
 <div class="container mb-5">
-  <%= link_to "New Wallet", wallets_path, class: "btn btn-flat text-decoration-none mb-3", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
+  <%= link_to t("wallets.new_wallet"), wallets_path, class: "btn btn-flat text-decoration-none mb-3", data: { bs_toggle: "modal", bs_target: "#exampleModal" } %>
 
   <div class="card-general-vision p-5">
-    <h2>My Wallets</h2>
+    <h2><%= t("wallets.my_wallets") %></h2>
     <div class="card-grid">
       <% @wallets.each do |wallet| %>
         <div class="card-my-wallets-preview mt-3">
@@ -60,11 +60,11 @@
 
                 <div>
                   <i class="fa-solid fa-arrow-right-to-bracket" style="color: #000000;"></i>
-                  <%= link_to "View Wallet", wallet_path(wallet), class: "text-decoration-none view-wallet" %>
+                  <%= link_to t("wallets.view_wallet"), wallet_path(wallet), class: "text-decoration-none view-wallet" %>
                 </div>
 
                 <div class="delete">
-                  <%= link_to wallet_path(wallet), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, method: :delete do %>
+                  <%= link_to wallet_path(wallet), data: { turbo_method: :delete, turbo_confirm: t("common.confirm") }, method: :delete do %>
                     <i class="fa-solid fa-trash-can"></i>
                   <% end %>
                 </div>
@@ -83,7 +83,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title wobble-ver-left" id="exampleModalLabel">Create New Wallet</h5>
+        <h5 class="modal-title wobble-ver-left" id="exampleModalLabel"><%= t("wallets.create_wallet") %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

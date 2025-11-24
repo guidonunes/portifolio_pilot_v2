@@ -1,0 +1,93 @@
+de:
+  hello: "Hallo Welt"
+  
+  # Navigation
+  nav:
+    home: "Startseite"
+    my_wallets: "Meine Brieftaschen"
+    profile: "Profil"
+    log_out: "Abmelden"
+    login: "Anmelden"
+    language: "Sprache"
+  
+  # Banner
+  banner:
+    title: "PortfolioPilot"
+    subtitle: "Verwalten Sie Aktien und Kryptowährungen nahtlos an einem Ort."
+    get_started: "Jetzt loslegen"
+  
+  # Pages
+  pages:
+    about: "Über uns"
+    welcome: "Willkommen"
+    trending_now: "Trending"
+  
+  # Wallets
+  wallets:
+    my_wallets: "Meine Brieftaschen"
+    new_wallet: "Neue Brieftasche"
+    create_wallet: "Brieftasche erstellen"
+    edit_wallet_name: "Brieftaschenname bearbeiten"
+    view_wallet: "Brieftasche anzeigen"
+    total_estimated_value: "Geschätzter Gesamtwert der Investition"
+    wallet_estimated_value: "Geschätzter Wert der Brieftasche"
+    all_time_profit: "Gesamtgewinn/-verlust"
+    allocation: "Zuteilung"
+    assets: "Vermögenswerte"
+    add_new_operation: "Neue Operation hinzufügen"
+    back_to_wallets: "Zurück zu Brieftaschen"
+    best_performer: "Bester Performer"
+    worst_performer: "Schlechtester Performer"
+    no_data_available: "Keine Daten verfügbar"
+  
+  # Operations
+  operations:
+    name: "Name"
+    price: "Preis"
+    avg_buy_price: "Durchschnittlicher Kaufpreis"
+    holdings: "Brieftaschen"
+    actions: "Aktionen"
+    add: "Hinzufügen"
+    edit: "Bearbeiten"
+    delete: "Löschen"
+    edit_operation: "Operation bearbeiten"
+    add_operation: "Neue Operation hinzufügen"
+  
+  # Assets
+  assets:
+    cryptocurrencies: "Kryptowährungen"
+    stocks: "Aktien"
+    price_24h: "24h%"
+  
+  # Features
+  features:
+    track_crypto_stocks: "Krypto und Aktien verfolgen"
+    track_description: "Überwachen Sie sowohl Kryptowährungen als auch brasilianische Aktien nahtlos in einer Anwendung."
+    best_worst_performers: "Beste und schlechteste Performer"
+    performers_description: "Behalten Sie die besten und schlechtesten Vermögenswerte in Ihrem Portfolio im Auge."
+    multiple_wallets: "Mehrere Brieftaschen erstellen"
+    wallets_description: "Erstellen und verwalten Sie mehrere Brieftaschen, um verschiedene finanzielle Ziele zu verfolgen."
+  
+  # Explanation
+  explanation:
+    web3_traditional: "Web3-Vermögenswerte + Traditionelle Aktien"
+    web3_description: "Dieser integrierte Ansatz ermöglicht es Ihnen, sowohl aufstrebende digitale Vermögenswerte wie Kryptowährungen und dezentrale Finanz-Token (DeFi) als auch etablierte Finanzinstrumente wie Aktien zu überwachen und zu verwalten."
+    monitor_categories: "Beide Kategorien an einem Ort überwachen"
+    monitor_description: "Durch die Überwachung beider Kategorien an einem einzigen Ort können Sie Ihre Anlagestrategie diversifizieren, über aufkommende Trends in der dezentralen Finanzierung informiert bleiben und fundierte Entscheidungen treffen, um Ihr finanzielles Wachstum zu optimieren."
+  
+  # About
+  about:
+    about_us: "Über uns"
+    our_goal: "Unser Ziel"
+    our_goal_description: "Als Studenten von Le Wagon haben wir diese Initiative mit dem Ziel gegründet, Einzelpersonen dabei zu helfen, alle ihre Investitionen in einer einzigen Anwendung zu organisieren, Zeit zu sparen und ein geordneteres Finanzmanagement zu fördern."
+  
+  # Common
+  common:
+    confirm: "Sind Sie sicher?"
+    close: "Schließen"
+    cancel: "Abbrechen"
+    save: "Speichern"
+    edit: "Bearbeiten"
+    delete: "Löschen"
+    back: "Zurück"
+

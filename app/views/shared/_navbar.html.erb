@@ -12,25 +12,30 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active px-3">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to t("nav.home"), root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My wallets", wallets_path, class: "nav-link" %>
+            <%= link_to t("nav.my_wallets"), wallets_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown ps-2">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "user.png", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", profile_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to t("nav.profile"), profile_path, class: "dropdown-item" %>
+              <%= link_to t("nav.log_out"), destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to t("nav.login"), new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item d-flex align-items-center">
+          <%= render "shared/language_switcher" %>
+        </li>
       </ul>
     </div>
   </div>

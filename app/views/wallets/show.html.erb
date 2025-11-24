@@ -2,7 +2,7 @@
 <div data-controller="render-oedit">
   <div class="container" data-controller="doughnut">
     <div class="d-flex justify-content-end">
-      <%= link_to "Back to wallets", wallets_path, class: "btn btn-cancel m-2 mb-5" %>
+      <%= link_to t("wallets.back_to_wallets"), wallets_path, class: "btn btn-cancel m-2 mb-5" %>
     </div>
 
     <div class="d-flex justify-content-between flex-column flex-md-row">
@@ -12,7 +12,7 @@
           <div class="card-total-balance">
             <div class="card-content pb-5">
               <div class="balance-title">
-                <h2 class="card-title-spec p-5">Wallet Estimated Value</h2>
+                <h2 class="card-title-spec p-5"><%= t("wallets.wallet_estimated_value") %></h2>
               </div>
               <div class="separator"></div>
               <div class="balance">
@@ -56,7 +56,7 @@
           <div class="card-total-balance">
             <div class="card-content pb-5">
               <div class="balance-title">
-                <h2 class="card-title-spec p-5">All-Time Profit/Loss</h2>
+                <h2 class="card-title-spec p-5"><%= t("wallets.all_time_profit") %></h2>
               </div>
               <div class="separator"></div>
               <div class="balance">
@@ -103,7 +103,7 @@
 
       <!-- Allocation Pie Chart -->
       <div class="card-holdings-quantity mb-4 ms-md-3 mt-4 mt-md-0">
-        <h2 class="card-title-spec text-center p-3">Allocation</h2>
+        <h2 class="card-title-spec text-center p-3"><%= t("wallets.allocation") %></h2>
         <%= render "layouts/doughnut" %>
       </div>
     </div>
@@ -112,7 +112,7 @@
       <!-- Best Performer -->
       <div class="performer-card m-1 performer-card-responsive">
         <div class="card-body">
-          <h5 class="card-title-spec text-center p-3 my-3">Best Performer</h5>
+          <h5 class="card-title-spec text-center p-3 my-3"><%= t("wallets.best_performer") %></h5>
           <% if @best_performer %>
             <div class="d-flex justify-content-evenly">
               <p class="performer-card-text px-3 pb-3">
@@ -123,7 +123,7 @@
               </p>
             </div>
           <% else %>
-            <p class="performer-card-text">No data available</p>
+            <p class="performer-card-text"><%= t("wallets.no_data_available") %></p>
           <% end %>
         </div>
       </div>
@@ -131,7 +131,7 @@
       <!-- Worst Performer -->
       <div class="performer-card m-1 performer-card-responsive">
         <div class="card-body">
-          <h5 class="card-title-spec text-center p-3 my-3">Worst Performer</h5>
+          <h5 class="card-title-spec text-center p-3 my-3"><%= t("wallets.worst_performer") %></h5>
           <% if @worst_performer %>
             <div class="d-flex justify-content-evenly">
               <p class="performer-card-text px-3 pb-3">
@@ -142,7 +142,7 @@
               </p>
             </div>
           <% else %>
-            <p class="performer-card-text">No data available</p>
+            <p class="performer-card-text"><%= t("wallets.no_data_available") %></p>
           <% end %>
         </div>
       </div>
@@ -151,52 +151,52 @@
     <div class="wallet-card-container wallet-card">
       <div class="wallet">
         <div class="d-flex justify-content-between mb-5 flex-column flex-md-row">
-          <h2 class="card-title-spec mb-3 mb-md-0">Assets</h2>
+          <h2 class="card-title-spec mb-3 mb-md-0"><%= t("wallets.assets") %></h2>
           <div class="d-flex flex-column flex-sm-row gap-2">
             <button type="button" class="btn btn-wallet mb-2 mb-sm-0" data-bs-toggle="modal" data-bs-target="#addOperationModal">
-              Add new operation
+              <%= t("wallets.add_new_operation") %>
             </button>
-            <%= link_to "Edit wallet name", edit_wallet_path(@wallet), class: "btn btn-wallet", data: { bs_toggle: "modal", bs_target: "#nameOperationModal" }%>
+            <%= link_to t("wallets.edit_wallet_name"), edit_wallet_path(@wallet), class: "btn btn-wallet", data: { bs_toggle: "modal", bs_target: "#nameOperationModal" }%>
           </div>
         </div>
 
         <!-- Grid Operations -->
         <div class="grid-header text-center">
-          <div class="column">Name</div>
-          <div class="column">Price</div>
-          <div class="column">24h%</div>
-          <div class="column">Avg. Buy Price</div>
-          <div class="column">Holdings</div>
-          <div class="column">Actions</div>
+          <div class="column"><%= t("operations.name") %></div>
+          <div class="column"><%= t("operations.price") %></div>
+          <div class="column"><%= t("assets.price_24h") %></div>
+          <div class="column"><%= t("operations.avg_buy_price") %></div>
+          <div class="column"><%= t("operations.holdings") %></div>
+          <div class="column"><%= t("operations.actions") %></div>
         </div>
 
         <% @wallet.operations.each do |operation| %>
           <div class="grid-operation text-center">
-            <div class="column ms-4" data-label="Name" data-doughnut-target="holdingName"><%= operation.holding.name %></div>
-            <div class="column" data-label="Price" data-doughnut-target="holdingAmount">R$ <%= number_with_precision(operation.holding.update_current_price, precision: 2) %></div>
+            <div class="column ms-4" data-label="<%= t("operations.name") %>" data-doughnut-target="holdingName"><%= operation.holding.name %></div>
+            <div class="column" data-label="<%= t("operations.price") %>" data-doughnut-target="holdingAmount">R$ <%= number_with_precision(operation.holding.update_current_price, precision: 2) %></div>
             <% if operation.holding.asset_type == 'fiat'  %>
               <% percentage_change = HgFinance.variation(operation.holding.abbreviation) %>
               <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
-                <div class="column" data-label="24h%"><%= number_with_precision(percentage_change, precision: 2) %>%</div>
+                <div class="column" data-label="<%= t("assets.price_24h") %>"><%= number_with_precision(percentage_change, precision: 2) %>%</div>
               </span>
             <% else %>
               <% percentage_change = operation.holding.find_percentage_holding_info %>
               <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
-                <div class="column" data-label="24h%"><%= number_with_precision(percentage_change, precision: 2) %>%</div>
+                <div class="column" data-label="<%= t("assets.price_24h") %>"><%= number_with_precision(percentage_change, precision: 2) %>%</div>
               </span>
             <% end %>
-            <div class="column" data-label="Avg. Buy Price">R$ <%= number_with_precision(operation.price, precision: 2) %></div>
-            <div class="column" data-label="Holdings">R$ <%= number_with_precision(operation.price * operation.quantity, precision: 2) %><br><span data-doughnut-target="holdingQuantity" class="text-quantity">Qtd.:<%= operation.quantity %></span></div>
+            <div class="column" data-label="<%= t("operations.avg_buy_price") %>">R$ <%= number_with_precision(operation.price, precision: 2) %></div>
+            <div class="column" data-label="<%= t("operations.holdings") %>">R$ <%= number_with_precision(operation.price * operation.quantity, precision: 2) %><br><span data-doughnut-target="holdingQuantity" class="text-quantity">Qtd.:<%= operation.quantity %></span></div>
 
             <!-- Actions Dropdown -->
             <div class="column actions mb-3">
               <div class="dropdown">
                 <i class="fa-solid fa-ellipsis pe-auto" data-bs-toggle="dropdown" aria-expanded="false"></i>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <%= link_to "Add", new_wallet_operation_path(@wallet), class: "dropdown-item", data: { bs_toggle: "modal", bs_target: "#addOperationModal" } %>
-                  <%= link_to "Edit", render_oedit_path(operation), class: "dropdown-item", data: { action: "click->render-oedit#render" } %>
-                  <%= link_to "Edit", edit_operation_path(operation), class: "dropdown-item d-none", data: { bs_toggle: "modal", bs_target: "#editOperationModal" } %>
-                  <%= link_to "Delete", operation_path(operation), class: "dropdown-item", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+                  <%= link_to t("operations.add"), new_wallet_operation_path(@wallet), class: "dropdown-item", data: { bs_toggle: "modal", bs_target: "#addOperationModal" } %>
+                  <%= link_to t("operations.edit"), render_oedit_path(operation), class: "dropdown-item", data: { action: "click->render-oedit#render" } %>
+                  <%= link_to t("operations.edit"), edit_operation_path(operation), class: "dropdown-item d-none", data: { bs_toggle: "modal", bs_target: "#editOperationModal" } %>
+                  <%= link_to t("operations.delete"), operation_path(operation), class: "dropdown-item", data: { turbo_method: :delete, turbo_confirm: t("common.confirm") } %>
                 </ul>
               </div>
             </div>
@@ -213,7 +213,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title wobble-ver-left" id="editOperationModalLabel">Edit Operation</h5>
+          <h5 class="modal-title wobble-ver-left" id="editOperationModalLabel"><%= t("operations.edit_operation") %></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" data-render-oedit-target="modalBody">
@@ -227,7 +227,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title wobble-ver-left" id="addOperationModalLabel">Add New Operation</h5>
+        <h5 class="modal-title wobble-ver-left" id="addOperationModalLabel"><%= t("operations.add_operation") %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -244,7 +244,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title wobble-ver-left" id="nameOperationModalLabel">Edit Wallet Name</h5>
+        <h5 class="modal-title wobble-ver-left" id="nameOperationModalLabel"><%= t("wallets.edit_wallet_name") %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

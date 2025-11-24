@@ -1,0 +1,44 @@
+<div class="language-switcher">
+  <div class="dropdown">
+    <button class="btn btn-language dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-globe me-2"></i>
+      <span class="current-locale">
+        <% case I18n.locale.to_s %>
+        <% when 'pt-BR' %>
+          PT-BR
+        <% when 'de' %>
+          DE
+        <% else %>
+          EN
+        <% end %>
+      </span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+      <li>
+        <%= link_to set_locale_path('en'), class: "dropdown-item #{'active' if I18n.locale.to_s == 'en'}" do %>
+          <i class="fa-solid fa-flag me-2"></i> English
+          <% if I18n.locale.to_s == 'en' %>
+            <i class="fa-solid fa-check ms-2"></i>
+          <% end %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to set_locale_path('pt-BR'), class: "dropdown-item #{'active' if I18n.locale.to_s == 'pt-BR'}" do %>
+          <i class="fa-solid fa-flag me-2"></i> Português (BR)
+          <% if I18n.locale.to_s == 'pt-BR' %>
+            <i class="fa-solid fa-check ms-2"></i>
+          <% end %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to set_locale_path('de'), class: "dropdown-item #{'active' if I18n.locale.to_s == 'de'}" do %>
+          <i class="fa-solid fa-flag me-2"></i> Deutsch
+          <% if I18n.locale.to_s == 'de' %>
+            <i class="fa-solid fa-check ms-2"></i>
+          <% end %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+

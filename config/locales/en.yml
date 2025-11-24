@@ -29,3 +29,93 @@
 
 en:
   hello: "Hello world"
+  
+  # Navigation
+  nav:
+    home: "Home"
+    my_wallets: "My wallets"
+    profile: "Profile"
+    log_out: "Log out"
+    login: "Login"
+    language: "Language"
+  
+  # Banner
+  banner:
+    title: "PortfolioPilot"
+    subtitle: "Manage stocks and cryptos seamlessly in one place."
+    get_started: "Get Started Now"
+  
+  # Pages
+  pages:
+    about: "About us"
+    welcome: "Welcome"
+    trending_now: "Trending Now"
+  
+  # Wallets
+  wallets:
+    my_wallets: "My Wallets"
+    new_wallet: "New Wallet"
+    create_wallet: "Create Wallet"
+    edit_wallet_name: "Edit wallet name"
+    view_wallet: "View Wallet"
+    total_estimated_value: "Total Estimated Investment Value"
+    wallet_estimated_value: "Wallet Estimated Value"
+    all_time_profit: "All-Time Profit/Loss"
+    allocation: "Allocation"
+    assets: "Assets"
+    add_new_operation: "Add new operation"
+    back_to_wallets: "Back to wallets"
+    best_performer: "Best Performer"
+    worst_performer: "Worst Performer"
+    no_data_available: "No data available"
+  
+  # Operations
+  operations:
+    name: "Name"
+    price: "Price"
+    avg_buy_price: "Avg. Buy Price"
+    holdings: "Holdings"
+    actions: "Actions"
+    add: "Add"
+    edit: "Edit"
+    delete: "Delete"
+    edit_operation: "Edit Operation"
+    add_operation: "Add New Operation"
+  
+  # Assets
+  assets:
+    cryptocurrencies: "Cryptocurrencies"
+    stocks: "Stocks"
+    price_24h: "24h%"
+  
+  # Features
+  features:
+    track_crypto_stocks: "Track Crypto and Stocks"
+    track_description: "Monitor both cryptocurrencies and Brazilian stocks seamlessly in one application."
+    best_worst_performers: "Best and Worst Performers"
+    performers_description: "Keep an eye on the best and worst performing assets in your portfolio."
+    multiple_wallets: "Create Multiple Wallets"
+    wallets_description: "Create and manage multiple wallets to track different financial goals."
+  
+  # Explanation
+  explanation:
+    web3_traditional: "Web3 Assets + Traditional Stocks"
+    web3_description: "This integrated approach allows you to monitor and manage both emerging digital assets, such as cryptocurrencies and decentralized finance (DeFi) tokens, as well as established financial instruments like stocks."
+    monitor_categories: "Monitor Both Categories in One Space"
+    monitor_description: "By monitoring both categories in one single space, you can diversify your investment strategy, stay informed about emerging trends in decentralized finance, and make well-informed decisions to optimize your financial growth."
+  
+  # About
+  about:
+    about_us: "About us"
+    our_goal: "Our Goal"
+    our_goal_description: "As students from Le Wagon, we established this initiative with the aim of assisting individuals in organizing all their investments within a single application, thereby saving time and promoting more orderly financial management."
+  
+  # Common
+  common:
+    confirm: "Are you sure?"
+    close: "Close"
+    cancel: "Cancel"
+    save: "Save"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"

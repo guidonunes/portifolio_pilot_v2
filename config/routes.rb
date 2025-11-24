@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get 'pages/about', to: 'pages#about'
+  
+  # Locale switching
+  get '/locale/:locale', to: 'application#set_locale', as: 'set_locale', constraints: { locale: /en|pt-BR|de/ }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
