@@ -17,7 +17,15 @@
           <li class="nav-item">
             <%= link_to t("nav.my_wallets"), wallets_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown ps-2">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item d-flex align-items-center">
+          <%= render "shared/language_switcher" %>
+        </li>
+        <li class="nav-item d-flex align-items-center ms-4">
+          <%= render "shared/theme_switcher" %>
+        </li>
+      </ul>
+          <li class="nav-item dropdown ps-2 ms-3">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= image_tag "user.png", class: "avatar", alt: "dropdown menu" %>
           </a>
@@ -31,14 +39,6 @@
             <%= link_to t("nav.login"), new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-      </ul>
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item d-flex align-items-center">
-          <%= render "shared/language_switcher" %>
-        </li>
-        <li class="nav-item d-flex align-items-center ms-4">
-          <%= render "shared/theme_switcher" %>
-        </li>
       </ul>
     </div>
   </div>
