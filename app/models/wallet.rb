@@ -6,7 +6,8 @@ class Wallet < ApplicationRecord
   has_many :holdings, through: :operations
 
   def total_holdings_value
-    operations.sum { |op| op.quantity * op.holding.current_price }
+    # Use SQL aggregation for better performance
+    operations.joins(:holding).sum('operations.quantity * holdings.current_price')
   end
 
   def all_time_profit
@@ -16,7 +17,8 @@ class Wallet < ApplicationRecord
   end
 
   def total_invested
-    operations.sum { |op| op.quantity * op.price }
+    # Use SQL aggregation instead of Ruby loop
+    operations.sum('quantity * price')
   end
 
   def percentage_change_total_holdings
@@ -28,9 +30,11 @@ class Wallet < ApplicationRecord
   def best_and_worst_performers
     return { best: nil, worst: nil } if operations.empty?
 
-    performances = operations.map do |operation|
-      current_price = operation.holding.update_current_price
-      next if current_price.nil?
+    # Use cached current_price instead of making API calls
+    # This prevents blocking on external API calls
+    performances = operations.includes(:holding).map do |operation|
+      current_price = operation.holding.current_price
+      next if current_price.nil? || current_price.zero?
 
       performance = ((current_price - operation.price) / operation.price) * 100
       { operation: operation, performance: performance }

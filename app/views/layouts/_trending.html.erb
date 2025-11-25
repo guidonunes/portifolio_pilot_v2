@@ -5,11 +5,11 @@
       <h2><%= t("assets.cryptocurrencies") %></h2>
       <div class="card">
       <ul class="list-group">
-        <% @holdings.where(asset_type: "crypto").last(5).each do |holding|%>
+        <% @crypto_holdings.each do |holding|%>
           <li class="info-grid p-2">
             <span class="holding-name"><%= holding.name %></span>
             <div class="numbers-container">
-              <span class="price-value">$ <%= number_with_precision(holding.current_price, precision: 2) %></span>
+              <span class="price-value">$ <%= number_with_precision(holding.current_price || 0, precision: 2) %></span>
               <% percentage_change = holding.find_percentage_holding_info %>
               <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %> percentage-value">
                 <%= number_with_precision(percentage_change, precision: 2) %>%
@@ -25,11 +25,11 @@
       <h2><%= t("assets.stocks") %></h2>
       <div class="card">
       <ul class="list-group">
-        <% @holdings.where(asset_type: "fiat").sample(5).each do |holding|%>
+        <% @fiat_holdings.each do |holding|%>
         <li class="info-grid p-2">
           <span class="holding-name"><%= holding.name %></span>
           <div class="numbers-container">
-            <span class="price-value">$ <%= number_with_precision(holding.current_price, precision: 2) %></span>
+            <span class="price-value">$ <%= number_with_precision(holding.current_price || 0, precision: 2) %></span>
             <% percentage_change = holding.find_percentage_holding_info %>
             <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %> percentage-value">
               <%= number_with_precision(percentage_change, precision: 2) %>%

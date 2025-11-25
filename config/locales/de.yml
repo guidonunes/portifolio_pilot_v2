@@ -44,14 +44,21 @@ de:
   operations:
     name: "Name"
     price: "Preis"
-    avg_buy_price: "Durchschnittlicher Kaufpreis"
-    holdings: "Brieftaschen"
+
+
+    avg_buy_price: "Ø Kaufpreis"
+
+    holdings: "Bestand"
+
     actions: "Aktionen"
     add: "Hinzufügen"
-    edit: "Bearbeiten"
+
+
+    edit: "Ändern"
     delete: "Löschen"
-    edit_operation: "Operation bearbeiten"
-    add_operation: "Neue Operation hinzufügen"
+
+    edit_operation: "Transaktion ändern"
+    add_operation: "Neue Transaktion"
 
   # Assets
   assets:

@@ -10,21 +10,27 @@ class Holding < ApplicationRecord
   end
 
   def fetch_current_price
-    if asset_type == 'fiat'
-      HgFinance.price(abbreviation) || 0
-    else
-      result = Cryptocompare::Price.full(abbreviation, 'BRL')
-      result.dig('RAW', abbreviation.upcase, 'BRL', 'PRICE')&.to_f || 0
+    # Cache API calls for 5 minutes to reduce external requests
+    Rails.cache.fetch("holding_price_#{id}_#{abbreviation}", expires_in: 5.minutes) do
+      if asset_type == 'fiat'
+        HgFinance.price(abbreviation) || 0
+      else
+        result = Cryptocompare::Price.full(abbreviation, 'BRL')
+        result.dig('RAW', abbreviation.upcase, 'BRL', 'PRICE')&.to_f || 0
+      end
     end
   end
 
   def find_percentage_holding_info
-    if asset_type == 'fiat'
-      HgFinance.variation(abbreviation) || 0
-    else
-      result = Cryptocompare::Price.full(abbreviation, 'BRL')
-      percentage_change = result.dig('RAW', abbreviation.upcase, 'BRL', 'CHANGEPCT24HOUR')&.to_f || 0
-      percentage_change
+    # Cache API calls for 5 minutes to reduce external requests
+    Rails.cache.fetch("holding_percentage_#{id}_#{abbreviation}", expires_in: 5.minutes) do
+      if asset_type == 'fiat'
+        HgFinance.variation(abbreviation) || 0
+      else
+        result = Cryptocompare::Price.full(abbreviation, 'BRL')
+        percentage_change = result.dig('RAW', abbreviation.upcase, 'BRL', 'CHANGEPCT24HOUR')&.to_f || 0
+        percentage_change
+      end
     end
   end
 

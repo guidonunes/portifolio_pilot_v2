@@ -2,12 +2,13 @@ class WalletsController < ApplicationController
   before_action :set_wallet, only: %i[show edit update destroy]
 
   def index
-    @wallets = policy_scope(Wallet)
+    @wallets = policy_scope(Wallet).includes(operations: :holding)
     @wallet_totals = calculate_wallet_totals(@wallets)
   end
 
   def show
-    @wallet = Wallet.find(params[:id])
+    # Eager load operations and holdings to prevent N+1 queries
+    @wallet = Wallet.includes(operations: :holding).find(params[:id])
     @total_holdings = @wallet.total_holdings_value
     @all_time_profit = @wallet.all_time_profit
     performers = @wallet.best_and_worst_performers
@@ -60,8 +61,9 @@ class WalletsController < ApplicationController
   end
 
   def calculate_wallet_totals(wallets)
+    # Use SQL aggregation instead of Ruby loops for better performance
     wallets.map do |wallet|
-      wallet.operations.sum { |op| op.price * op.quantity }
+      wallet.operations.sum('price * quantity')
     end
   end
 end
