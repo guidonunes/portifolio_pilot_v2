@@ -1,0 +1,54 @@
+.theme-switcher {
+  display: inline-block;
+}
+
+.theme-toggle-btn {
+  background-color: $gold;
+  color: $midnight-blue;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: darken($gold, 10%);
+    transform: scale(1.05);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($gold, 0.3);
+  }
+
+  i {
+    font-size: 16px;
+    color: $midnight-blue;
+  }
+
+  @media (max-width: 992px) {
+    margin-top: 10px;
+    width: fit-content;
+  }
+}
+
+// Dark theme button styling
+[data-theme="dark"] {
+  .theme-toggle-btn {
+    background-color: $gold;
+    color: #000000;
+    
+    i {
+      color: #000000;
+    }
+    
+    &:hover {
+      background-color: lighten($gold, 10%);
+    }
+  }
+}
+

@@ -1,0 +1,290 @@
+// Dark Theme Variables
+[data-theme="dark"] {
+  // Background colors
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2f2f2f;
+  --bg-card: #2f2f2f;
+  --bg-navbar: #000000;
+  
+  // Text colors
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-light: #f5f5f5;
+  
+  // Border colors
+  --border-color: #404040;
+  
+  // Override existing variables
+  --midnight-blue: #000000;
+  --soft-white: #2f2f2f;
+  --charcoal: #e0e0e0;
+}
+
+// Light Theme (default)
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-navbar: #2C3e50;
+  
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --text-light: #000000;
+  
+  --border-color: #e0e0e0;
+}
+
+// Apply dark theme to body
+[data-theme="dark"] {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  
+  // Navbar
+  .navbar-lewagon {
+    background-color: #000000 !important;
+    
+    .nav-link {
+      color: #e0e0e0 !important;
+      
+      &:hover {
+        color: $gold !important;
+      }
+    }
+    
+    .navbar-toggler {
+      border-color: #e0e0e0;
+      
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28224, 224, 224, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+    }
+  }
+  
+  // Cards
+  .card-total-balance,
+  .card-my-wallets-preview,
+  .card-holdings-quantity,
+  .performer-card,
+  .card-general-vision,
+  .feature,
+  .card {
+    background-color: #2f2f2f !important;
+    color: #e0e0e0 !important;
+    border-color: var(--border-color);
+    
+    .card-title-spec,
+    .balance-title,
+    .balance-title-w,
+    .currency,
+    .currency-w,
+    .balance-amount,
+    .balance-amount-w,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    span,
+    div {
+      color: #e0e0e0 !important;
+    }
+  }
+  
+  // Text elements
+  body {
+    background-color: var(--bg-primary);
+    color: #e0e0e0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #e0e0e0;
+  }
+  
+  p, span, div, li, a {
+    color: #e0e0e0;
+    
+    &.text-decoration-none {
+      color: #e0e0e0;
+    }
+  }
+  
+  // Tables and grids
+  .grid-header,
+  .grid-operation {
+    color: var(--text-primary);
+    border-color: var(--border-color);
+  }
+  
+  // Modals
+  .modal-content {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+      border-color: var(--border-color);
+    }
+    
+    .btn-close {
+      filter: invert(1);
+    }
+  }
+  
+  // Forms
+  .form-control,
+  .form-select {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    
+    &:focus {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      border-color: $gold;
+    }
+  }
+  
+  // Dropdowns
+  .dropdown-menu {
+    background-color: var(--bg-card);
+    border-color: var(--border-color);
+    
+    .dropdown-item {
+      color: var(--text-primary);
+      
+      &:hover {
+        background-color: var(--bg-secondary);
+        color: var(--text-primary);
+      }
+    }
+  }
+  
+  // Buttons
+  .btn-secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+    
+    &:hover {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+  }
+  
+  // Footer
+  .footer {
+    background-color: #000000;
+    color: #e0e0e0;
+  }
+  
+  // Sign up and other form cards
+  .sign-up-card,
+  .update-info-card,
+  .cancel-card,
+  .card-info {
+    background-color: #2f2f2f !important;
+    color: #e0e0e0 !important;
+    
+    h1, h2, h3, h4, h5, h6, p, span, div {
+      color: #e0e0e0 !important;
+    }
+  }
+  
+  // Dashboard title
+  .dashboard-title,
+  .dashboard-user,
+  .wallet-title {
+    color: #e0e0e0;
+  }
+  
+  // View wallet link
+  .view-wallet {
+    color: #e0e0e0 !important;
+    
+    &:hover {
+      color: $gold !important;
+    }
+  }
+  
+  // Info grid
+  .info-grid {
+    color: #e0e0e0;
+  }
+  
+  // Performer colors (keep green/red but adjust for dark theme)
+  .performer-color-up {
+    color: $emerald-green !important;
+  }
+  
+  .performer-color-down {
+    color: $ruby !important;
+  }
+  
+  // Appreciation/depreciation text
+  .appreciation {
+    color: #e0e0e0;
+  }
+  
+  // Text quantity
+  .text-quantity {
+    color: #b0b0b0;
+  }
+  
+  // Wallet cards
+  .wallet-card-container {
+    background-color: var(--bg-primary);
+    color: #e0e0e0;
+  }
+  
+  // Separators
+  .separator {
+    border-color: var(--border-color);
+  }
+  
+  // List groups
+  .list-group-item {
+    background-color: #2f2f2f;
+    color: #e0e0e0;
+    border-color: var(--border-color);
+  }
+  
+  // Trending section
+  .trending-assets-section {
+    background-color: #000000 !important;
+    
+    h1, h2 {
+      color: #e0e0e0;
+    }
+  }
+  
+  // Features section
+  .features-section {
+    background-color: var(--bg-primary);
+  }
+  
+  // Explanation section
+  .combined-assets-section {
+    background-color: var(--bg-primary);
+    
+    h2 {
+      color: $gold !important; // Orange titles in dark theme
+    }
+    
+    p {
+      color: #e0e0e0;
+    }
+  }
+  
+  // Banner overlay (keep dark overlay but adjust text)
+  .banner {
+    .container {
+      h1, p {
+        color: var(--text-light);
+      }
+    }
+  }
+}
+
