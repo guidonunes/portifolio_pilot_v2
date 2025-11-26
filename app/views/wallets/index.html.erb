@@ -15,7 +15,7 @@
           <div data-controller="balance-toggle">
             <div class="balance-right hidden" data-target="balance-toggle.visible">
               <div class="balance-amount p-3">
-                <strong><%= number_with_precision(@wallet_totals.sum, precision: 2)%></strong>
+                <strong><%= format_brazilian_number(@wallet_totals.sum) %></strong>
                 <i class="fa-solid fa-eye ps-3" data-action="click->balance-toggle#toggle"></i>
               </div>
             </div>
@@ -49,7 +49,7 @@
               <div class="balance-right">
                 <div><%= link_to wallet.name, wallet_path(wallet), class: "text-decoration-none balance-title-w" %></div>
                 <div class="balance-amount-w"><% total_sum = wallet.operations.sum('price * quantity') %>
-                  <%= number_with_precision(total_sum, precision: 2) %>
+                  <%= format_brazilian_number(total_sum) %>
                   </div>
               </div>
             </div>

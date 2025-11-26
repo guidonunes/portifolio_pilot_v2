@@ -22,7 +22,7 @@
                 <div data-controller="balance-toggle">
                   <div class="balance-right hidden" data-target="balance-toggle.visible">
                     <div class="balance-amount pe-5 mt-5">
-                      <%= number_with_precision(@total_holdings, precision: 2) %>
+                      <%= format_brazilian_number(@total_holdings) %>
                       <i class="fa-solid fa-eye ps-3" data-action="click->balance-toggle#toggle"></i>
                     </div>
                   </div>
@@ -68,7 +68,7 @@
                     <div class="balance-amount pe-5 mt-5">
                       <% percentage_change = @all_time_profit%>
                       <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
-                        <%= number_with_precision(@all_time_profit, precision: 2) %>
+                        <%= format_brazilian_number(@all_time_profit) %>
                       </span>
                       <i class="fa-solid fa-eye ps-3" data-action="click->balance-toggle#toggle"></i>
                     </div>
@@ -87,12 +87,12 @@
                 <% if @all_time_profit > 0 %>
                   <div class="appreciation">
                     <i class="fa-solid fa-caret-up"></i>
-                    <%= number_with_precision(@percentage_change_total_holdings, precision: 2, class:"at-balance-amount-up") %>%
+                    <%= format_brazilian_number(@percentage_change_total_holdings) %>%
                   </div>
                 <% elsif @all_time_profit < 0 %>
                   <div class="appreciation">
                     <i class="fa-solid fa-caret-down"></i>
-                    <%= number_with_precision(@percentage_change_total_holdings, precision: 2) %>%%
+                    <%= format_brazilian_number(@percentage_change_total_holdings) %>%
                   </div>
                 <% end %>
               </div>
@@ -119,7 +119,7 @@
                 <%= @best_performer[:operation].holding.name %>
               </p>
               <p class="performer-card-text">
-                <span class="performer-color-up"><i class="fa-solid fa-caret-up"></i><%= number_with_precision(@best_performer[:performance], precision: 2) %>%</span>
+                <span class="performer-color-up"><i class="fa-solid fa-caret-up"></i><%= format_brazilian_number(@best_performer[:performance]) %>%</span>
               </p>
             </div>
           <% else %>
@@ -138,7 +138,7 @@
                 <%= @worst_performer[:operation].holding.name %>
               </p>
               <p class="performer-card-text">
-                <span class="performer-color-down"><i class="fa-solid fa-caret-down"></i><%= number_with_precision(@worst_performer[:performance], precision: 2) %>%</span>
+                <span class="performer-color-down"><i class="fa-solid fa-caret-down"></i><%= format_brazilian_number(@worst_performer[:performance]) %>%</span>
               </p>
             </div>
           <% else %>
@@ -173,13 +173,13 @@
         <% @wallet.operations.each do |operation| %>
           <div class="grid-operation text-center">
             <div class="column ms-4" data-label="<%= t("operations.name") %>" data-doughnut-target="holdingName"><%= operation.holding.name %></div>
-            <div class="column" data-label="<%= t("operations.price") %>" data-doughnut-target="holdingAmount">R$ <%= number_with_precision(operation.holding.update_current_price, precision: 2) %></div>
+            <div class="column" data-label="<%= t("operations.price") %>" data-doughnut-target="holdingAmount">R$ <%= format_brazilian_number(operation.holding.update_current_price) %></div>
             <% percentage_change = operation.holding.find_percentage_holding_info %>
             <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
-              <div class="column" data-label="<%= t("assets.price_24h") %>"><%= number_with_precision(percentage_change || 0, precision: 2) %>%</div>
+              <div class="column" data-label="<%= t("assets.price_24h") %>"><%= format_brazilian_number(percentage_change || 0) %>%</div>
             </span>
-            <div class="column" data-label="<%= t("operations.avg_buy_price") %>">R$ <%= number_with_precision(operation.price, precision: 2) %></div>
-            <div class="column" data-label="<%= t("operations.holdings") %>">R$ <%= number_with_precision(operation.price * operation.quantity, precision: 2) %><br><span data-doughnut-target="holdingQuantity" class="text-quantity">Qtd.:<%= operation.quantity %></span></div>
+            <div class="column" data-label="<%= t("operations.avg_buy_price") %>">R$ <%= format_brazilian_number(operation.price) %></div>
+            <div class="column" data-label="<%= t("operations.holdings") %>">R$ <%= format_brazilian_number(operation.price * operation.quantity) %><br><span data-doughnut-target="holdingQuantity" class="text-quantity">Qtd.:<%= operation.quantity %></span></div>
 
             <!-- Actions Dropdown -->
             <div class="column actions mb-3">

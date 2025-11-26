@@ -383,9 +383,9 @@ hr.solid {
 
 .info-grid {
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr;
+  grid-template-columns: 2fr 1.5fr 1fr;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 
   .holding-name {
     font-weight: 500;
@@ -394,11 +394,20 @@ hr.solid {
 
   .numbers-container {
     display: contents; // Allow grid to work normally on desktop
+    
+    .price-value,
+    .percentage-value {
+      text-align: right;
+      white-space: nowrap;
+    }
   }
 
   .price-value,
   .percentage-value {
     text-align: right;
+    white-space: nowrap;
+    min-width: 100px;
+    display: inline-block;
   }
 
   @media (max-width: 576px) {

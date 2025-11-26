@@ -10,10 +10,10 @@
             <span class="holding-name"><%= holding.name %></span>
             <div class="numbers-container">
               <% current_price = holding.fetch_current_price %>
-              <span class="price-value">$ <%= number_with_precision(current_price || 0, precision: 2) %></span>
+              <span class="price-value">R$ <%= format_brazilian_number(current_price || 0) %></span>
               <% percentage_change = holding.find_percentage_holding_info %>
               <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %> percentage-value">
-                <%= number_with_precision(percentage_change || 0, precision: 2) %>%
+                <%= format_brazilian_number(percentage_change || 0) %>%
               </span>
             </div>
           </li>
@@ -31,10 +31,10 @@
           <span class="holding-name"><%= holding.name %></span>
           <div class="numbers-container">
             <% current_price = holding.fetch_current_price %>
-            <span class="price-value">$ <%= number_with_precision(current_price || 0, precision: 2) %></span>
+            <span class="price-value">R$ <%= format_brazilian_number(current_price || 0) %></span>
             <% percentage_change = holding.find_percentage_holding_info %>
             <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %> percentage-value">
-              <%= number_with_precision(percentage_change || 0, precision: 2) %>%
+              <%= format_brazilian_number(percentage_change || 0) %>%
             </span>
           </div>
         </li>
