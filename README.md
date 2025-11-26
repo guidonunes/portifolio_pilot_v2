@@ -281,6 +281,3 @@ This is a personal learning project, but suggestions and feedback are welcome!
 
 This project is for educational purposes.
 
----
-
-**Built with ❤️ as a learning project**
