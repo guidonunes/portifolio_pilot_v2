@@ -174,17 +174,10 @@
           <div class="grid-operation text-center">
             <div class="column ms-4" data-label="<%= t("operations.name") %>" data-doughnut-target="holdingName"><%= operation.holding.name %></div>
             <div class="column" data-label="<%= t("operations.price") %>" data-doughnut-target="holdingAmount">R$ <%= number_with_precision(operation.holding.update_current_price, precision: 2) %></div>
-            <% if operation.holding.asset_type == 'fiat'  %>
-              <% percentage_change = HgFinance.variation(operation.holding.abbreviation) %>
-              <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
-                <div class="column" data-label="<%= t("assets.price_24h") %>"><%= number_with_precision(percentage_change, precision: 2) %>%</div>
-              </span>
-            <% else %>
-              <% percentage_change = operation.holding.find_percentage_holding_info %>
-              <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
-                <div class="column" data-label="<%= t("assets.price_24h") %>"><%= number_with_precision(percentage_change, precision: 2) %>%</div>
-              </span>
-            <% end %>
+            <% percentage_change = operation.holding.find_percentage_holding_info %>
+            <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">
+              <div class="column" data-label="<%= t("assets.price_24h") %>"><%= number_with_precision(percentage_change || 0, precision: 2) %>%</div>
+            </span>
             <div class="column" data-label="<%= t("operations.avg_buy_price") %>">R$ <%= number_with_precision(operation.price, precision: 2) %></div>
             <div class="column" data-label="<%= t("operations.holdings") %>">R$ <%= number_with_precision(operation.price * operation.quantity, precision: 2) %><br><span data-doughnut-target="holdingQuantity" class="text-quantity">Qtd.:<%= operation.quantity %></span></div>
 

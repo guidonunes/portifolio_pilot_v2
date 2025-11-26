@@ -11,7 +11,9 @@ class Holding < ApplicationRecord
 
   def fetch_current_price
     # Cache API calls for 5 minutes to reduce external requests
-    Rails.cache.fetch("holding_price_#{id}_#{abbreviation}", expires_in: 5.minutes) do
+    # Use abbreviation only for cache key since id might be nil during before_create
+    cache_key = "holding_price_#{abbreviation}"
+    Rails.cache.fetch(cache_key, expires_in: 5.minutes) do
       if asset_type == 'fiat'
         Brapi.price(abbreviation) || 0
       else
@@ -23,7 +25,9 @@ class Holding < ApplicationRecord
 
   def find_percentage_holding_info
     # Cache API calls for 5 minutes to reduce external requests
-    Rails.cache.fetch("holding_percentage_#{id}_#{abbreviation}", expires_in: 5.minutes) do
+    # Use abbreviation only for cache key since id might be nil during before_create
+    cache_key = "holding_percentage_#{abbreviation}"
+    Rails.cache.fetch(cache_key, expires_in: 5.minutes) do
       if asset_type == 'fiat'
         Brapi.variation(abbreviation) || 0
       else
