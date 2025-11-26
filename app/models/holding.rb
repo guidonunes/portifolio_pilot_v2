@@ -13,7 +13,7 @@ class Holding < ApplicationRecord
     # Cache API calls for 5 minutes to reduce external requests
     Rails.cache.fetch("holding_price_#{id}_#{abbreviation}", expires_in: 5.minutes) do
       if asset_type == 'fiat'
-        HgFinance.price(abbreviation) || 0
+        Brapi.price(abbreviation) || 0
       else
         result = Cryptocompare::Price.full(abbreviation, 'BRL')
         result.dig('RAW', abbreviation.upcase, 'BRL', 'PRICE')&.to_f || 0
@@ -25,7 +25,7 @@ class Holding < ApplicationRecord
     # Cache API calls for 5 minutes to reduce external requests
     Rails.cache.fetch("holding_percentage_#{id}_#{abbreviation}", expires_in: 5.minutes) do
       if asset_type == 'fiat'
-        HgFinance.variation(abbreviation) || 0
+        Brapi.variation(abbreviation) || 0
       else
         result = Cryptocompare::Price.full(abbreviation, 'BRL')
         percentage_change = result.dig('RAW', abbreviation.upcase, 'BRL', 'CHANGEPCT24HOUR')&.to_f || 0
