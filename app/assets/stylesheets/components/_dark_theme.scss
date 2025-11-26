@@ -170,7 +170,12 @@
       background-color: var(--bg-secondary);
       color: var(--text-primary);
       border-color: $gold;
+      box-shadow: 0 0 0 0.25rem rgba($gold, 0.25);
     }
+  }
+  
+  .form-label {
+    color: var(--text-primary);
   }
   
   // Dropdowns
@@ -186,6 +191,50 @@
         color: var(--text-primary);
       }
     }
+  }
+  
+  // Search bar fake options
+  .fake-input {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+    
+    &::placeholder {
+      color: var(--text-secondary) !important;
+    }
+    
+    &:focus {
+      border-color: $gold !important;
+      box-shadow: 0 0 0 0.25rem rgba($gold, 0.25) !important;
+    }
+  }
+  
+  .fake-options {
+    background-color: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+  }
+  
+  .fake-option {
+    background-color: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+    border-bottom-color: var(--border-color) !important;
+    
+    &:hover {
+      background-color: #3a3a3a !important; // Lightened version of --bg-card (#2f2f2f)
+      color: var(--text-primary) !important;
+    }
+  }
+  
+  // Eye icons - Bootstrap alert warning color
+  .fa-eye,
+  .fa-eye-slash {
+    color: $warning !important; // Bootstrap warning/alert color
+  }
+  
+  // Trash and arrow icons - Bootstrap alert warning color
+  .fa-trash-can,
+  .fa-arrow-right-to-bracket {
+    color: $warning !important; // Bootstrap warning/alert color
   }
   
   // Buttons

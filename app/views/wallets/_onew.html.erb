@@ -4,7 +4,7 @@
   <div class="form-inputs" data-controller="search-bar">
     <div class="position-relative">
       <input type="text" placeholder="Search", class="position-absolute fake-input form-select select optional" data-action="input->search-bar#search focus->search-bar#showOptions" data-search-bar-target="input">
-      <%= f.association :holding, label: "Holding", input_html: {
+      <%= f.association :holding, label: "Holding", label_method: :abbreviation, value_method: :id, input_html: {
         "data-search-bar-target": "select"
       } %>
       <ul class="fake-options position-absolute d-none" data-search-bar-target="fakeOptions"></ul>

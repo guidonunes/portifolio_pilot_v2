@@ -23,7 +23,7 @@
                   <div class="balance-right hidden" data-target="balance-toggle.visible">
                     <div class="balance-amount pe-5 mt-5">
                       <%= format_brazilian_number(@total_holdings) %>
-                      <i class="fa-solid fa-eye ps-3" data-action="click->balance-toggle#toggle"></i>
+                      <i class="fa-solid fa-eye ps-3 color-alert" data-action="click->balance-toggle#toggle"></i>
                     </div>
                   </div>
                   <div class="balance-right" data-target="balance-toggle.hidden">
@@ -116,7 +116,7 @@
           <% if @best_performer %>
             <div class="d-flex justify-content-evenly">
               <p class="performer-card-text px-3 pb-3">
-                <%= @best_performer[:operation].holding.name %>
+                <%= @best_performer[:operation].holding.abbreviation.upcase %>
               </p>
               <p class="performer-card-text">
                 <span class="performer-color-up"><i class="fa-solid fa-caret-up"></i><%= format_brazilian_number(@best_performer[:performance]) %>%</span>
@@ -135,7 +135,7 @@
           <% if @worst_performer %>
             <div class="d-flex justify-content-evenly">
               <p class="performer-card-text px-3 pb-3">
-                <%= @worst_performer[:operation].holding.name %>
+                <%= @worst_performer[:operation].holding.abbreviation.upcase %>
               </p>
               <p class="performer-card-text">
                 <span class="performer-color-down"><i class="fa-solid fa-caret-down"></i><%= format_brazilian_number(@worst_performer[:performance]) %>%</span>
@@ -172,7 +172,7 @@
 
         <% @wallet.operations.each do |operation| %>
           <div class="grid-operation text-center">
-            <div class="column ms-4" data-label="<%= t("operations.name") %>" data-doughnut-target="holdingName"><%= operation.holding.name %></div>
+            <div class="column ms-4" data-label="<%= t("operations.name") %>" data-doughnut-target="holdingName"><%= operation.holding.abbreviation.upcase %></div>
             <div class="column" data-label="<%= t("operations.price") %>" data-doughnut-target="holdingAmount">R$ <%= format_brazilian_number(operation.holding.update_current_price) %></div>
             <% percentage_change = operation.holding.find_percentage_holding_info %>
             <span class="<%= percentage_change < 0 ? 'performer-color-down' : 'performer-color-up' %>">

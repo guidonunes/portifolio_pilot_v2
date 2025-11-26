@@ -6,7 +6,7 @@ export default class extends Controller {
 
   connect() {
     const list = Array.from(this.selectTarget.children).map((option) => ({
-      name: option.innerText,
+      name: option.innerText.toUpperCase(),
       id: option.value
     }));
 
@@ -33,7 +33,7 @@ export default class extends Controller {
       ]
     };
     const list = Array.from(this.selectTarget.children).map((option) => ({
-      name: option.innerText,
+      name: option.innerText.toUpperCase(),
       id: option.value
     }));
     const fuse = new Fuse(list, fuseOptions);
@@ -62,7 +62,7 @@ export default class extends Controller {
   }
 
   selectOption(event) {
-    this.inputTarget.value = event.target.innerText;
+    this.inputTarget.value = event.target.innerText.toUpperCase();
     this.selectTarget.value = event.target.dataset.value;
     this.hideOptions();
   }
