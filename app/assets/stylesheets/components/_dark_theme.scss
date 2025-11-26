@@ -122,6 +122,23 @@
   .grid-operation {
     color: var(--text-primary);
     border-color: var(--border-color);
+    
+    // Ensure performer colors work in grid operations
+    .performer-color-up {
+      color: $emerald-green !important;
+      
+      .column {
+        color: $emerald-green !important;
+      }
+    }
+    
+    .performer-color-down {
+      color: $ruby !important;
+      
+      .column {
+        color: $ruby !important;
+      }
+    }
   }
   
   // Modals
@@ -246,6 +263,23 @@
   .wallet-card-container {
     background-color: var(--bg-primary);
     color: #e0e0e0;
+    
+    // Ensure performer colors work in wallet card tables
+    .performer-color-up {
+      color: $emerald-green !important;
+      
+      .column {
+        color: $emerald-green !important;
+      }
+    }
+    
+    .performer-color-down {
+      color: $ruby !important;
+      
+      .column {
+        color: $ruby !important;
+      }
+    }
   }
   
   // Separators
