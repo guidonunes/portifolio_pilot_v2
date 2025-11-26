@@ -88,6 +88,15 @@
     div {
       color: #e0e0e0 !important;
     }
+    
+    // Override for performer colors - must come after general span rule
+    .performer-color-up {
+      color: $emerald-green !important;
+    }
+    
+    .performer-color-down {
+      color: $ruby !important;
+    }
   }
   
   // Text elements
@@ -257,6 +266,26 @@
     
     h1, h2 {
       color: #e0e0e0;
+    }
+    
+    // Ensure performer colors work in trending section
+    .performer-color-up {
+      color: $emerald-green !important;
+    }
+    
+    .performer-color-down {
+      color: $ruby !important;
+    }
+    
+    // Override general span color for percentage values
+    .percentage-value {
+      &.performer-color-up {
+        color: $emerald-green !important;
+      }
+      
+      &.performer-color-down {
+        color: $ruby !important;
+      }
     }
   }
   
